@@ -1,12 +1,12 @@
 public class Cell {
 
-    private boolean bomb;
-    private int distance;
-    private boolean cleared;
+    private boolean bomb; // om det är en bomb eller inte
+    private int adjacent; // hur många bomber som är runt om
+    private boolean cleared; // om cellen är "avslöjad"
 
-    public Cell(boolean bomb, int distance, boolean cleared) {
+    public Cell(boolean bomb, int adjacent, boolean cleared) {
         this.bomb = bomb;
-        this.distance = distance;
+        this.adjacent = adjacent;
         this.cleared = cleared;
     }
 
@@ -18,12 +18,12 @@ public class Cell {
         this.bomb = bomb;
     }
 
-    public int getDistance() {
-        return distance;
+    public int getAdjacent() {
+        return adjacent;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public void setAdjacent(int adjacent) {
+        this.adjacent = adjacent;
     }
 
     public boolean isCleared() {
@@ -33,5 +33,24 @@ public class Cell {
     public void setCleared(boolean cleared) {
         this.cleared = cleared;
     }
-    
+
+    // metod för att "avslöja" cellen, returnerar 0 om det är en bomb och annars antal bomber runt om
+    public int sweep(){
+        this.cleared = true;
+        if (bomb){
+            return 0;
+        } else{
+            return adjacent;
+        }
+    }
+    // metod för att få ut en char att skriva ut i GameBoarden
+    public char toChar(){
+        if (!cleared){
+            return 'x';
+        } else if (bomb){
+            return 'B';
+        } else{
+            return (char)adjacent; // Type-castar om int:en adjacent till en char
+        }
+    }
 }
