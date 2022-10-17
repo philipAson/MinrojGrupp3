@@ -5,6 +5,6 @@ public class Main {
         gameBoard.printGameBoard();
 
 
-        System.out.println("Viktor");
+        System.out.println("Viktor branch");
     }
 }
