@@ -1,8 +1,36 @@
 public class Cell {
+    // om det är en bomb eller inte
+    private boolean bomb;
+
+    // är platsen redan röjd
+    private boolean clear;
+
+    // ger oss ett nummer som indikerar närheten till bomb
+    private int bombNear;
 
 
 
-    // här ska vi göra så spelet visar vad som händer när du väljer en plats på GameBoard.
+    //
+    // förklarar en cell som bomb.
+
+    public void bombPlace(){
+        bomb = true;
+
+
+
+
+    }
+    // vi får true om cell är en bomb
+    public boolean bombHit(){
+        return bomb;
+    }
+
+    
+
+
+
+
+
 
     // exempel är att det kommer en siffra mellan 1-3 beroende på hur nära man är "bomben".
 
