@@ -25,7 +25,11 @@ public class Cell {
         return bomb;
     }
 
-    
+
+    public void clearCell(){
+
+
+    }
 
 
 
