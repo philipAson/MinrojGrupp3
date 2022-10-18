@@ -36,6 +36,13 @@ public class Cell {
         isFlagged = false;
     }
 
+    public Cell(){
+        this.bomb = false;
+        this.adjacent = 0;
+        cleared = false;
+        isFlagged = false;
+    }
+
     public boolean isBomb() {
         return bomb;
     }
