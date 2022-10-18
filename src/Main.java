@@ -7,7 +7,7 @@ public class Main {
 
         System.out.println("*============================*");
         System.out.println("*============================*");
-        System.out.println("*==Welcome to Mine Sweeper!==*");
+        System.out.println("*==Whalecum in my Sweeper!==*");
         System.out.println("*============================*");
         System.out.println("*============================*");
 
