@@ -1,51 +1,56 @@
 public class Cell {
-    // om det är en bomb eller inte
-    private boolean bomb;
 
-    // är platsen redan röjd
-    private boolean clear;
+    private boolean bomb; // om det är en bomb eller inte
+    private int adjacent; // hur många bomber som är runt om
+    private boolean cleared; // om cellen är "avslöjad"
 
-    // ger oss ett nummer som indikerar närheten till bomb
-    private int bombNear;
-
-
-
-    //
-    // förklarar en cell som bomb.
-
-    public void bombPlace(){
-        bomb = true;
-
-
-
-
+    public Cell(boolean bomb, int adjacent, boolean cleared) {
+        this.bomb = bomb;
+        this.adjacent = adjacent;
+        this.cleared = cleared;
     }
-    // vi får true om cell är en bomb
-    public boolean bombHit(){
+
+    public boolean isBomb() {
         return bomb;
     }
 
-
-    public void clearCell(){
-
-
+    public void setBomb(boolean bomb) {
+        this.bomb = bomb;
     }
 
+    public int getAdjacent() {
+        return adjacent;
+    }
 
+    public void setAdjacent(int adjacent) {
+        this.adjacent = adjacent;
+    }
 
+    public boolean isCleared() {
+        return cleared;
+    }
 
+    public void setCleared(boolean cleared) {
+        this.cleared = cleared;
+    }
 
-
-    // exempel är att det kommer en siffra mellan 1-3 beroende på hur nära man är "bomben".
-
-    //Den ska också meddela om det är upptaget redan eller om man träffar en "bomb" på GameBoard.
-
-    //
-
-
-
-
-
-
-
+    // metod för att "avslöja" cellen, returnerar 0 om det är en bomb och annars antal bomber runt om
+    public int sweep(){
+        this.cleared = true;
+        if (bomb){
+            return 0;
+        } else{
+            return adjacent;
+        }
+    }
+    // metod för att få ut en char att skriva ut i GameBoarden
+    public char toChar(){
+        if (!cleared){
+            return 'x';
+        } else if (bomb){
+            return 'B';
+        } else{
+            return (char)adjacent; // Type-castar om int:en adjacent till en char
+        }
+    }
 }
