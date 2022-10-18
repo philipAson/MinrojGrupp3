@@ -28,4 +28,8 @@ public class Game {
         // Prints board with cell(s) revealed
         gameBoard.printBoard();
     }
+
+    public GameBoard getGameBoard() {
+        return gameBoard;
+    }
 }
