@@ -1,22 +1,27 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
         GameBoard gameBoard = new GameBoard();
         gameBoard.printGameBoard();
-        System.out.println("Johan");
 
- 
+        System.out.println("*============================*");
+        System.out.println("*============================*");
+        System.out.println("*==Welcome to Mine Sweeper!==*");
+        System.out.println("*============================*");
+        System.out.println("*============================*");
 
-        System.out.println("Viktor");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Player 1 enter name: ");
+        String player = scanner.nextLine();
 
 
 
-        System.out.println("Alex branch");
-
-        System.out.println("Philip");
 
 
-        System.out.println("Viktor branch");
+
+
+
 
     }
 }
