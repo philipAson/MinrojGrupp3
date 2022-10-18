@@ -4,11 +4,11 @@ public class Cell {
 //    private boolean isRevealed;
     // Default constructor for isRevealed that sets it to false;
 //    public Cell() {
-        this.isRevealed = false;
+//        this.isRevealed = false;
 //    }
     // Reveals a cell and set isRevealed to true;
 //    public void reveal() {
-        isRevealed = true;
+//        isRevealed = true;
 //    }
     // isRevealed getter
 //    public boolean getIsRevealed() {
@@ -32,9 +32,8 @@ public class Cell {
     public Cell(boolean bomb, int adjacent, boolean cleared) {
         this.bomb = bomb;
         this.adjacent = adjacent;
-        this.cleared = cleared;
+        cleared = cleared;
         isFlagged = false;
-        isCovered = false;
     }
 
     public boolean isBomb() {
