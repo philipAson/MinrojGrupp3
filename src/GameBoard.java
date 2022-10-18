@@ -23,7 +23,7 @@ public class GameBoard {
         for (int y = 0; y < height; y++) {
             System.out.println();
             for (int x = 0; x < width; x++) {
-                System.out.print(cells[x][y].toChar());
+                System.out.print(cells[x][y].toString());
             }
         }
     }

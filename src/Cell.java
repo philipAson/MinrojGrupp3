@@ -85,13 +85,11 @@ public class Cell {
         }
     }
     // metod för att få ut en char att skriva ut i GameBoarden
-    public char toChar(){
+    public String toString(){
         if (!cleared){
-            return 'x';
-        } else if (bomb){
-            return 'B';
-        } else{
-            return (char)adjacent; // Type-castar om int:en adjacent till en char
+            return " * ";
+        } else {
+            return "[ ]";
         }
     }
 }
