@@ -1,5 +1,6 @@
 public class Cell {
 
+    private boolean isFlagged; // flaggar ?!?
     private boolean bomb; // om det är en bomb eller inte
     private int adjacent; // hur många bomber som är runt om
     private boolean cleared; // om cellen är "avslöjad"
@@ -8,6 +9,8 @@ public class Cell {
         this.bomb = bomb;
         this.adjacent = adjacent;
         this.cleared = cleared;
+        isFlagged = false;
+        isCovered = false;
     }
 
     public boolean isBomb() {
@@ -32,6 +35,14 @@ public class Cell {
 
     public void setCleared(boolean cleared) {
         this.cleared = cleared;
+    }
+    
+    public void flag() {
+        isFlagged = true;
+    }
+
+    public void unflag() {
+        isFlagged = false;
     }
 
     // metod för att "avslöja" cellen, returnerar 0 om det är en bomb och annars antal bomber runt om
