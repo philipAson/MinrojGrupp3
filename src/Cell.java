@@ -36,6 +36,15 @@ public class Cell {
         isFlagged = false;
     }
 
+    public Cell(int y, int x, boolean b, Cell[][] clone){
+        this.bomb = false;
+        this.adjacent = 0;
+        cleared = false;
+        isFlagged = false;
+    }
+
+
+
     public boolean isBomb() {
         return bomb;
     }
@@ -84,7 +93,9 @@ public class Cell {
         } else if (bomb){
             return 'B';
         } else{
-            return (char)adjacent; // Type-castar om int:en adjacent till en char
+            return (char)adjacent ;
+
+            // Type-castar om int:en adjacent till en char
         }
     }
 }

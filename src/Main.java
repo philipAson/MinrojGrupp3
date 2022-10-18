@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Game game = new Game(new Scanner(System.in);      
+        Game game = new Game(new Scanner(System.in));
 
         System.out.println("*============================*");
         System.out.println("*============================*");
