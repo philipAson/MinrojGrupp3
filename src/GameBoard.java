@@ -23,12 +23,12 @@ public class GameBoard {
         for (int y = 0; y < height; y++) {
             System.out.println();
             for (int x = 0; x < width; x++) {
-                System.out.print(cells[x][y]);
+                System.out.print(cells[x][y].toChar());
             }
         }
     }
     public void revealCell(int x, int y) {
         // Method .reveal is specified in Class:Cell.
-        cells[x][y].reveal();
+        cells[x][y].sweep();
     }
 }
