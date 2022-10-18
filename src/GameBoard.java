@@ -1,35 +1,34 @@
 public class GameBoard {
 
-    //2D Array representing "Cells"
-    private char[][] gameBoard = {
-            {' ', ' ', ' ', ' ', ' ', ' '},
-            {' ', ' ', ' ', ' ', ' ', ' '},
-            {' ', ' ', ' ', ' ', ' ', ' '},
-            {' ', ' ', ' ', ' ', ' ', ' '},
-            {' ', ' ', ' ', ' ', ' ', ' '},
-            {' ', ' ', ' ', ' ', ' ', ' '}};
-    //Visual representation of gameboard.
-    void printGameBoard() {
-        System.out.println(
-                "    1 | 2 | 3 | 4 | 5 | 6 |\n" +
-                        "  ----+---+---+---+---+---|\n" +
-                        "a | "+gameBoard[0][0]+" | "+gameBoard[0][1]+" | "+gameBoard[0][2]+" | "
-                        +gameBoard[0][3]+" | "+gameBoard[0][4]+" | "+gameBoard[0][5]+" |\n"+
-                        "  ----+---+---+---+---+---|\n" +
-                        "b | "+gameBoard[1][0]+" | "+gameBoard[1][1]+" | "+gameBoard[1][2]+" | "
-                        +gameBoard[1][3]+" | "+gameBoard[1][4]+" | "+gameBoard[1][5]+" |\n"+
-                        "  ----+---+---+---+---+---|\n" +
-                        "c | "+gameBoard[2][0]+" | "+gameBoard[2][1]+" | "+gameBoard[2][2]+" | "
-                        +gameBoard[2][3]+" | "+gameBoard[2][4]+" | "+gameBoard[2][5]+" |\n"+
-                        "  ----+---+---+---+---+---|\n" +
-                        "d | "+gameBoard[3][0]+" | "+gameBoard[3][1]+" | "+gameBoard[3][2]+" | "
-                        +gameBoard[3][3]+" | "+gameBoard[3][4]+" | "+gameBoard[3][5]+" |\n"+
-                        "  ----+---+---+---+---+---|\n" +
-                        "e | "+gameBoard[4][0]+" | "+gameBoard[4][1]+" | "+gameBoard[4][2]+" | "
-                        +gameBoard[4][3]+" | "+gameBoard[4][4]+" | "+gameBoard[4][5]+" |\n"+
-                        "  ----+---+---+---+---+---|\n" +
-                        "f | "+gameBoard[5][0]+" | "+gameBoard[5][1]+" | "+gameBoard[5][2]+" | "
-                        +gameBoard[5][3]+" | "+gameBoard[5][4]+" | "+gameBoard[5][5]+" |\n"+
-                        "  ------------------------|\n");
+    // 2D Cell Array. Representing the "game board".
+    private Cell cells [][];
+    // Two int variables that represent width and height of the game board.
+    private int width;
+    private int height;
+    // Constructor
+    public GameBoard(int width, int height) {
+        this.width = width;
+        this.height = height;
+        // Set the number of cells on Board (X x Y).
+        cells = new Cell[width][height];
+        // for loop for initializing the number of cells on the X and Y axis.
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                cells[x][y] = new Cell();
+            }
+        }
+    }
+    // Prints the board
+    public void printBoard() {
+        for (int y = 0; y < height; y++) {
+            System.out.println();
+            for (int x = 0; x < width; x++) {
+                System.out.print(cells[x][y]);
+            }
+        }
+    }
+    public void revealCell(int x, int y) {
+        // Method .reveal is specified in Class:Cell.
+        cells[x][y].reveal();
     }
 }
