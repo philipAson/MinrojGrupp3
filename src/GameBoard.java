@@ -37,7 +37,45 @@ public class GameBoard {
     }
     public void revealCell(Coordinate coordinate) {
         // Method .reveal is specified in Class:Cell.
-        cells[coordinate.x][coordinate.y].sweep();
+        // cells[coordinate.x][coordinate.y].sweep();
+        floodFill(coordinate.x, coordinate.y);
+    }
+
+    public void floodFill(int x, int y) {
+        if (x >= 0 && x < cells.length && y >= 0 && y < cells.length) {
+            // Flood-fill funktionalitet
+            //if (cells[x][y].getAdjacent() == 0 && !cells[x][y].isBomb() && !cells[x][y].isCleared()) {
+            cells[x][y].sweep();
+            // Går rekursivt in i cellerna brevid och provar att sweepa dom också
+            try {
+                if (cells[x - 1][y].getAdjacent() == 0 && !cells[x - 1][y].isBomb() && !cells[x - 1][y].isCleared()) {
+                    floodFill(x - 1, y);
+                }
+            } catch (Exception e) {
+            }
+            try {
+                if (cells[x + 1][y].getAdjacent() == 0 && !cells[x + 1][y].isBomb() && !cells[x + 1][y].isCleared()) {
+                    floodFill(x + 1, y);
+                }
+            } catch (Exception e) {
+            }
+            try {
+                if (cells[x][y - 1].getAdjacent() == 0 && !cells[x][y - 1].isBomb() && !cells[x][y - 1].isCleared()) {
+                    floodFill(x, y - 1);
+                }
+            } catch (Exception e) {
+            }
+            try {
+                if (cells[x][y + 1].getAdjacent() == 0 && !cells[x][y + 1].isBomb() && !cells[x][y + 1].isCleared()) {
+                    floodFill(x, y + 1);
+                }
+            } catch (Exception e) {
+            }
+            //revealCell(x + 1, y);
+            //revealCell(x, y - 1);
+            //revealCell(x, y + 1);
+            //}
+        }
     }
 
     public boolean hasWon(){
