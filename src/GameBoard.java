@@ -24,16 +24,33 @@ public class GameBoard {
     // Prints the board
     public void printBoard() {
         for (int y = 0; y < height; y++) {
+            System.out.print(" " + y + " ");
+        }
+        System.out.println("");
+        for (int y = 0; y < height; y++) {
             System.out.println();
             for (int x = 0; x < width; x++) {
                 System.out.print(cells[x][y].toString());
             }
+            System.out.print("   " + y);
         }
     }
     public void revealCell(int x, int y) {
         // Method .reveal is specified in Class:Cell.
         cells[x][y].sweep();
     }
+
+    public boolean hasWon(){
+        for (Cell[] i : cells){ //för alla kolumner i 2D arrayen
+            for (Cell j : i){ //för alla celler i kolumnen
+                if (!j.isCleared() && !j.isBomb()){ //om någon cell inte är "vänd på" (om den inte är en bomb)
+                    return false; //då har man inte vunnit
+                }
+            }
+        }
+        return true; //annars har man vunnit (om alla celler förutom bomber är "vända på")
+    }
+
     public void MineGenerator() {
 
         int currentMines = 0;
