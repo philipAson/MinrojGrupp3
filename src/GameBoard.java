@@ -35,9 +35,9 @@ public class GameBoard {
             System.out.print("   " + y);
         }
     }
-    public void revealCell(int x, int y) {
+    public void revealCell(Coordinate coordinate) {
         // Method .reveal is specified in Class:Cell.
-        cells[x][y].sweep();
+        cells[coordinate.x][coordinate.y].sweep();
     }
 
     public boolean hasWon(){
@@ -77,5 +77,20 @@ public class GameBoard {
 
         }
 
+    }
+    public boolean validPosition(Coordinate coordinate) {
+        /*A valid position is one that matches with coordinates inside the bounds of the cells array.
+        We already have a width and height variable, and arrays start at 0 so these can be used to check the validity.
+        The method should return true if all the following conditions are true.
+        If any are false, the result should be false.*/
+        if (coordinate.x >= 0 && coordinate.y >= 0 && coordinate.x < width && coordinate.y < height) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    // Checks if the coordinate is already revealed. Method specified in Class: Cell.
+    public boolean isCellRevealed(Coordinate coordinate) {
+        return cells[coordinate.x][coordinate.y].isCleared();
     }
 }

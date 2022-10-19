@@ -15,17 +15,33 @@ public class Game {
 
     // **********************
     void startGame() {
-        // Prints board to Terminal
-        gameBoard.printBoard();
-        System.out.println("\nEnter your coordinate you want to sweep by typing in X(Space)Y");
-        // User sets coordinates to sweep
-        int posX = scanner.nextInt();
-        int posY = scanner.nextInt();
-        System.out.println("You entered the coordinates " + posX + " and " + posY + ".");
-        /* "Reveals" chosen cell by setting boolean isRevealed to true.
-        Thereby Cell.toString returns [ ] instead of * .                                            */
-        gameBoard.revealCell(posX, posY);
-        // Prints board with cell(s) revealed
-        gameBoard.printBoard();
+        // instance variable
+        Coordinate inputCoordinate;
+        while (true){
+            gameBoard.printBoard();
+            inputCoordinate = getCoordinateInput();
+            gameBoard.revealCell(inputCoordinate);
+        }
+    }
+    public boolean isPositionValid (Coordinate coordinate) {
+        if (!gameBoard.validPosition(coordinate)) {
+            System.out.println("Not a valid position");
+            return false;
+        } else if (gameBoard.isCellRevealed(coordinate)) {
+            System.out.println("Position has already been swept");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public Coordinate getCoordinateInput() {
+        Coordinate input = new Coordinate(0,0);
+        do {
+            System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
+            // User sets coordinate to sweep
+            input.y = scanner.nextInt();
+            input.x = scanner.nextInt();
+        } while (!isPositionValid(input)); /// LÄGG TILLL VALIDPOSITION METOD INOM PARANTESERNA!!!!!!!!
+        return input;
     }
 }
