@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class GameBoard {
 
     // 2D Cell Array. Representing the "game board".
@@ -6,6 +8,7 @@ public class GameBoard {
     private int width;
     private int height;
     // Constructor
+    int totalMines;
     public GameBoard(int width, int height) {
         this.width = width;
         this.height = height;
@@ -14,7 +17,7 @@ public class GameBoard {
         // for loop for initializing the number of cells on the X and Y axis.
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                cells[x][y] = new Cell();
+                cells[x][y] = new Cell(y, x, false, cells.clone());
             }
         }
     }
@@ -30,5 +33,32 @@ public class GameBoard {
     public void revealCell(int x, int y) {
         // Method .reveal is specified in Class:Cell.
         cells[x][y].sweep();
+    }
+    public void MineGenerator() {
+
+        int currentMines = 0;
+        Random random = new Random();
+
+        while (currentMines < totalMines){
+
+            for (int y = 0; y <height; y++){
+                for (int x = 0; x < width; x++){
+
+                    double chance = random.nextDouble();
+
+                    if(cells[y][x] == null){
+                        cells[y][x] = new Cell(y,x,false, cells.clone());
+
+                    } else if (cells[y][x].isBomb()){
+                    } else if(chance > 0.99 && currentMines < totalMines){
+                        cells[y][x] = new Cell(y, x,true, cells.clone());
+                        currentMines++;
+                    }
+                }
+            }
+
+
+        }
+
     }
 }
