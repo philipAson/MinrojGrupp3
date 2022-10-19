@@ -43,8 +43,6 @@ public class GameBoard {
 
     public void floodFill(int x, int y) {
         if (x >= 0 && x < cells.length && y >= 0 && y < cells.length) {
-            // Flood-fill funktionalitet
-            //if (cells[x][y].getAdjacent() == 0 && !cells[x][y].isBomb() && !cells[x][y].isCleared()) {
             cells[x][y].sweep();
             // Går rekursivt in i cellerna brevid och provar att sweepa dom också
             try {
@@ -71,10 +69,6 @@ public class GameBoard {
                 }
             } catch (Exception e) {
             }
-            //revealCell(x + 1, y);
-            //revealCell(x, y - 1);
-            //revealCell(x, y + 1);
-            //}
         }
     }
 
