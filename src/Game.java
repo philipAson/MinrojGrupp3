@@ -37,10 +37,16 @@ public class Game {
     public Coordinate getCoordinateInput() {
         Coordinate input = new Coordinate(0,0);
         do {
-            System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
+           // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
             // User sets coordinate to sweep
+            System.out.println("\n Enter coordinate for Y");
             input.y = scanner.nextInt();
+
+            System.out.println("\n Enter coordinate for X");
             input.x = scanner.nextInt();
+
+
+
         } while (!isPositionValid(input)); /// LÄGG TILLL VALIDPOSITION METOD INOM PARANTESERNA!!!!!!!!
         return input;
     }
