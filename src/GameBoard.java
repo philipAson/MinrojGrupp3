@@ -112,6 +112,7 @@ public class GameBoard {
                     }} catch(Exception e){}
                     // sätt adjacent till antalet bomber runt om
                     cells[x][y].setAdjacent(countBombs);
+                    countBombs = 0; //sätt tillbaka till 0
                 }
             }
         }
