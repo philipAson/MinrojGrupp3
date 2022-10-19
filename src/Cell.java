@@ -36,7 +36,7 @@ public class Cell {
         isFlagged = false;
     }
 
-    public Cell(){
+    public Cell(int y, int x, boolean b, Cell[][] clone){
         this.bomb = false;
         this.adjacent = 0;
         cleared = false;
