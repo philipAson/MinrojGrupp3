@@ -34,6 +34,18 @@ public class GameBoard {
         // Method .reveal is specified in Class:Cell.
         cells[x][y].sweep();
     }
+
+    public boolean hasWon(){
+        for (Cell[] i : cells){ //för alla kolumner i 2D arrayen
+            for (Cell j : i){ //för alla celler i kolumnen
+                if (!j.isCleared() && !j.isBomb()){ //om någon cell inte är "vänd på" (om den inte är en bomb)
+                    return false; //då har man inte vunnit
+                }
+            }
+        }
+        return true; //annars har man vunnit (om alla celler förutom bomber är "vända på")
+    }
+
     public void MineGenerator() {
 
         int currentMines = 0;
