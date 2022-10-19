@@ -78,7 +78,7 @@ public class GameBoard {
         }
 
     }
-    public boolean validPosition(Coordinate coordinate) {
+    public boolean alreadyTaken(Coordinate coordinate) {
         /*A valid position is one that matches with coordinates inside the bounds of the cells array.
         We already have a width and height variable, and arrays start at 0 so these can be used to check the validity.
         The method should return true if all the following conditions are true.
@@ -90,7 +90,7 @@ public class GameBoard {
         }
     }
     // Checks if the coordinate is already revealed. Method specified in Class: Cell.
-    public boolean isCellRevealed(Coordinate coordinate) {
+    public boolean isAlreadyTaken(Coordinate coordinate) {
         return cells[coordinate.x][coordinate.y].isCleared();
     }
 }

@@ -17,31 +17,51 @@ public class Game {
     void startGame() {
         // instance variable
         Coordinate inputCoordinate;
-        while (true){
+        while (true) {
             gameBoard.printBoard();
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
         }
     }
-    public boolean isPositionValid (Coordinate coordinate) {
-        if (!gameBoard.validPosition(coordinate)) {
-            System.out.println("Not a valid position");
+
+    public boolean isPositionValid(Coordinate coordinate) {
+        if (!gameBoard.alreadyTaken(coordinate)) {
+            System.out.println("Not a valid position!");
             return false;
-        } else if (gameBoard.isCellRevealed(coordinate)) {
-            System.out.println("Position has already been swept");
+        } else if (gameBoard.isAlreadyTaken(coordinate)) {
+            System.out.println("Position has already been revealed!");
             return false;
         } else {
             return true;
         }
     }
+
     public Coordinate getCoordinateInput() {
-        Coordinate input = new Coordinate(0,0);
-        do {
-            System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
-            // User sets coordinate to sweep
-            input.y = scanner.nextInt();
-            input.x = scanner.nextInt();
-        } while (!isPositionValid(input)); /// LÄGG TILLL VALIDPOSITION METOD INOM PARANTESERNA!!!!!!!!
+        Coordinate input = new Coordinate(0, 0);
+        try {
+            do {
+                System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
+                // User sets coordinate to sweep
+                input.y = scanner.nextInt();
+                input.x = scanner.nextInt();
+            } while (!isPositionValid(input));
+            {
+
+            }
+
+
+            return input;
+
+
+        } catch (Exception e) {
+            System.out.println("Wrong input. will clear 0 0!");
+            scanner.next();
+
+        }
         return input;
     }
 }
+
+
+
+

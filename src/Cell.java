@@ -29,11 +29,14 @@ public class Cell {
     private int adjacent; // hur många bomber som är runt om
     private boolean cleared; // om cellen är "avslöjad"
 
+    private boolean alreadyTaken; // om cellen redan är avslöjad
+
     public Cell(boolean bomb, int adjacent, boolean cleared) {
         this.bomb = bomb;
         this.adjacent = adjacent;
         cleared = cleared;
         isFlagged = false;
+        alreadyTaken = false;
     }
 
     public Cell(int y, int x, boolean b, Cell[][] clone){
@@ -41,6 +44,7 @@ public class Cell {
         this.adjacent = 0;
         cleared = false;
         isFlagged = false;
+        alreadyTaken = false;
     }
 
     public boolean isBomb() {
@@ -90,6 +94,15 @@ public class Cell {
             return " * ";
         } else {
             return "[ ]";
+        }
+    }
+
+    public boolean isAlreadyTaken() {
+        return alreadyTaken;
+    }
+    public void AlreadyTaken() {
+        if (alreadyTaken) {
+            throw new IllegalStateException("This cell is already revealed!");
         }
     }
 }
