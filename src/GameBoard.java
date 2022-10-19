@@ -36,7 +36,7 @@ public class GameBoard {
         // Method .reveal is specified in Class:Cell.
         cells[x][y].sweep();
     }
-    
+
 
     public boolean hasWon(){
         for (Cell[] i : cells){ //för alla kolumner i 2D arrayen
