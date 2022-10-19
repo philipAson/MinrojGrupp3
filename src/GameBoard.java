@@ -72,6 +72,51 @@ public class GameBoard {
         }
     }
 
+    public void setCellAdjacent(){
+        int countBombs = 0;
+        for (int x = 0; x < cells.length; x++){
+            for (int y = 0; y < cells.length; y++){ // för alla celler i gameboarden
+                if (!cells[x][y].isBomb()) { //om den nuvarande cellen inte är en bomb
+                    // kolla alla bomber runt om (detta går nog att göra snyggare)
+                    try{ // try ifall det är utanför arrayen
+                    if (cells[x - 1][y - 1].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    try{
+                    if (cells[x][y - 1].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    try{
+                    if (cells[x + 1][y - 1].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    try{
+                    if (cells[x][y - 1].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    try{
+                    if (cells[x][y + 1].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    try{
+                    if (cells[x + 1][y - 1].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    try{
+                    if (cells[x + 1][y].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    try{
+                    if (cells[x + 1][y + 1].isBomb()){
+                        countBombs = countBombs + 1;
+                    }} catch(Exception e){}
+                    // sätt adjacent till antalet bomber runt om
+                    cells[x][y].setAdjacent(countBombs);
+                }
+            }
+        }
+    }
+
     public boolean hasWon(){
         for (Cell[] i : cells){ //för alla kolumner i 2D arrayen
             for (Cell j : i){ //för alla celler i kolumnen
