@@ -50,26 +50,25 @@ public class Game {
     }
     public Coordinate getCoordinateInput() {
         Coordinate input = new Coordinate(0,0);
-           // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
-            // User sets coordinate to sweep
-                // Also catches exception
-                while (true) {
-                    try {
-                        do {
-                            System.out.println("\n Enter coordinate for Y");
-                            String y = scanner.nextLine();
-                            input.y = Integer.parseInt(y);
+        // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
+        // User sets coordinate to sweep
+        // Also catches exception
+        while (true) {
+            try {
+                do {
+                    System.out.println("\n\nEnter coordinate for X");
+                    String x = scanner.nextLine();
+                    input.x = Integer.parseInt(x) -1;
 
-                            System.out.println("\n Enter coordinate for X");
-                            String x = scanner.nextLine();
-                            input.x = Integer.parseInt(x);
+                    System.out.println("Enter coordinate for Y");
+                    String y = scanner.nextLine();
+                    input.y = Integer.parseInt(y) - 1;
+                } while (!isPositionValid(input));
+                return input ;
 
-                        } while (!isPositionValid(input));
-                        return input ;
-
-                    } catch (Exception e){
-                        System.out.println("Cant read coordinate");
-                    }
-                }
+            } catch (Exception e){
+                System.out.println("Cant read coordinate");
+            }
+        }
     }
 }
