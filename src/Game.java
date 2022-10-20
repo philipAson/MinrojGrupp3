@@ -11,7 +11,9 @@ public class Game {
         this.scanner = new Scanner(System.in);
         // Sets the default board to be 10 x 10 cells
         gameBoard = new GameBoard(10, 10);
+        gameBoard.MineGenerator();
         gameBoard.setCellAdjacent();
+
     }
 
     // **********************
@@ -22,6 +24,17 @@ public class Game {
             gameBoard.printBoard();
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
+            if (gameBoard.isBombHit(inputCoordinate)){
+                gameBoard.printBoard();
+
+                System.out.println("\nYou Lose!");
+                break;
+            }
+            if (gameBoard.hasWon()){
+                gameBoard.printBoard();
+                System.out.println("\nYou Win!" );
+                break;
+            }
         }
     }
     public boolean isPositionValid (Coordinate coordinate) {
