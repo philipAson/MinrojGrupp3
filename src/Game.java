@@ -24,7 +24,17 @@ public class Game {
             gameBoard.printBoard();
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
-            gameBoard.()
+            if (gameBoard.isBombHit(inputCoordinate)){
+                gameBoard.printBoard();
+
+                System.out.println("\nYou Lose!");
+                break;
+            }
+            if (gameBoard.hasWon()){
+                gameBoard.printBoard();
+                System.out.println("\nYou Win!" );
+                break;
+            }
         }
     }
     public boolean isPositionValid (Coordinate coordinate) {

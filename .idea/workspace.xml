@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <list id="0b38c6f0-b4e8-46cd-b435-48a72251181c" name="Changes by Christel" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,17 +22,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/GameBoard.java">
-      <ranges>
-        <range start1="10" end1="11" start2="10" end2="11" changelist="8e6e98c6-c781-4e15-a580-d49d1db4d272" />
-        <range start1="142" end1="143" start2="142" end2="142" changelist="8e6e98c6-c781-4e15-a580-d49d1db4d272" />
-        <range start1="145" end1="146" start2="144" end2="144" changelist="8e6e98c6-c781-4e15-a580-d49d1db4d272" />
-        <range start1="149" end1="150" start2="147" end2="148" changelist="8e6e98c6-c781-4e15-a580-d49d1db4d272" />
-        <range start1="161" end1="161" start2="159" end2="168" changelist="0b38c6f0-b4e8-46cd-b435-48a72251181c" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
