@@ -24,6 +24,7 @@ public class Game {
             gameBoard.printBoard();
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
+            gameBoard.()
         }
     }
     public boolean isPositionValid (Coordinate coordinate) {

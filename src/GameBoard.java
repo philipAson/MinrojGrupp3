@@ -8,7 +8,7 @@ public class GameBoard {
     private int width;
     private int height;
     // Constructor
-    int totalMines = 10;
+    int totalMines = 2;
     public GameBoard(int width, int height) {
         this.width = width;
         this.height = height;
@@ -140,14 +140,12 @@ public class GameBoard {
                 for (int x = 0; x < width; x++){
 
                     double chance = random.nextDouble();
-                    System.out.println(chance);
 
                     if(cells[y][x] == null){
-                        //cells[y][x].setBomb(true);
                         cells[y][x] = new Cell(y,x,false, cells.clone());
 
                     } else if (cells[y][x].isBomb()){
-                    } else if(chance > 0.99 && currentMines < totalMines){
+                    } else if(chance > 0.95 && currentMines < totalMines){
 
                         cells[y][x].setBomb(true);
                         currentMines++;
@@ -159,6 +157,15 @@ public class GameBoard {
         }
 
     }
+
+    public boolean isBombHit (Coordinate cood){
+        if (cells[cood.getX()][cood.getY()].isBomb()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean validPosition(Coordinate coordinate) {
         /*A valid position is one that matches with coordinates inside the bounds of the cells array.
         We already have a width and height variable, and arrays start at 0 so these can be used to check the validity.
