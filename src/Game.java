@@ -37,9 +37,11 @@ public class Game {
     }
     public Coordinate getCoordinateInput() {
         Coordinate input = new Coordinate(0,0);
-        do {
+        try {
+            do {
            // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
             // User sets coordinate to sweep
+                // Also catches exception
             System.out.println("\n Enter coordinate for Y");
             input.y = scanner.nextInt();
 
@@ -48,7 +50,20 @@ public class Game {
 
 
 
-        } while (!isPositionValid(input)); /// LÄGG TILLL VALIDPOSITION METOD INOM PARANTESERNA!!!!!!!!
+         } while (!isPositionValid(input)); /// LÄGG TILLL VALIDPOSITION METOD INOM PARANTESERNA!!!!!!!!
+            {
+
+            }
+
+
+            return input;
+
+
+        } catch (Exception e) {
+            System.out.println("Wrong input. will clear 0 0!");
+            scanner.next();
+
+        }
         return input;
     }
 }
