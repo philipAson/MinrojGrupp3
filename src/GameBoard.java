@@ -8,7 +8,7 @@ public class GameBoard {
     private int width;
     private int height;
     // Constructor
-    int totalMines;
+    int totalMines = 10;
     public GameBoard(int width, int height) {
         this.width = width;
         this.height = height;
@@ -140,13 +140,16 @@ public class GameBoard {
                 for (int x = 0; x < width; x++){
 
                     double chance = random.nextDouble();
+                    System.out.println(chance);
 
                     if(cells[y][x] == null){
+                        //cells[y][x].setBomb(true);
                         cells[y][x] = new Cell(y,x,false, cells.clone());
 
                     } else if (cells[y][x].isBomb()){
                     } else if(chance > 0.99 && currentMines < totalMines){
-                        cells[y][x] = new Cell(y, x,true, cells.clone());
+
+                        cells[y][x].setBomb(true);
                         currentMines++;
                     }
                 }
