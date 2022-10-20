@@ -88,8 +88,13 @@ public class Cell {
     public String toString(){
         if (!cleared){
             return " * ";
+        } else if (isBomb()){
+            return " B ";
+        } else if (adjacent > 0){
+            return " " + adjacent + " ";
         } else {
             return "[ ]";
         }
+
     }
 }

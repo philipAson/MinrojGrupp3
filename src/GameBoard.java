@@ -37,7 +37,85 @@ public class GameBoard {
     }
     public void revealCell(Coordinate coordinate) {
         // Method .reveal is specified in Class:Cell.
-        cells[coordinate.x][coordinate.y].sweep();
+        // cells[coordinate.x][coordinate.y].sweep();
+        floodFill(coordinate.x, coordinate.y);
+    }
+
+    public void floodFill(int x, int y) {
+        if (x >= 0 && x < cells.length && y >= 0 && y < cells.length) {
+            cells[x][y].sweep();
+            // Går rekursivt in i cellerna brevid och provar att sweepa dom också
+            try {
+                if (cells[x - 1][y].getAdjacent() == 0 && !cells[x - 1][y].isBomb() && !cells[x - 1][y].isCleared()) {
+                    floodFill(x - 1, y);
+                }
+            } catch (Exception e) {
+            }
+            try {
+                if (cells[x + 1][y].getAdjacent() == 0 && !cells[x + 1][y].isBomb() && !cells[x + 1][y].isCleared()) {
+                    floodFill(x + 1, y);
+                }
+            } catch (Exception e) {
+            }
+            try {
+                if (cells[x][y - 1].getAdjacent() == 0 && !cells[x][y - 1].isBomb() && !cells[x][y - 1].isCleared()) {
+                    floodFill(x, y - 1);
+                }
+            } catch (Exception e) {
+            }
+            try {
+                if (cells[x][y + 1].getAdjacent() == 0 && !cells[x][y + 1].isBomb() && !cells[x][y + 1].isCleared()) {
+                    floodFill(x, y + 1);
+                }
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    public void setCellAdjacent(){
+        int countBombs = 0;
+        for (int x = 0; x < cells.length; x++){
+            for (int y = 0; y < cells.length; y++){ // för alla celler i gameboarden
+                if (!cells[x][y].isBomb()) { //om den nuvarande cellen inte är en bomb
+                    // kolla alla bomber runt om (detta går nog att göra snyggare)
+                    try{ // try ifall det är utanför arrayen
+                        if (cells[x - 1][y - 1].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    try{
+                        if (cells[x][y - 1].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    try{
+                        if (cells[x + 1][y - 1].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    try{
+                        if (cells[x][y + 1].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    try{
+                        if (cells[x + 1][y].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    try{
+                        if (cells[x + 1][y + 1].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    try{
+                        if (cells[x-1][y+1].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    try{
+                        if (cells[x-1][y].isBomb()){
+                            countBombs = countBombs + 1;
+                        }} catch(Exception e){}
+                    // sätt adjacent till antalet bomber runt om
+                    cells[x][y].setAdjacent(countBombs);
+                    countBombs = 0; //sätt tillbaka till 0
+                }
+            }
+        }
     }
 
     public boolean hasWon(){

@@ -11,6 +11,7 @@ public class Game {
         this.scanner = new Scanner(System.in);
         // Sets the default board to be 10 x 10 cells
         gameBoard = new GameBoard(10, 10);
+        gameBoard.setCellAdjacent();
     }
 
     // **********************
