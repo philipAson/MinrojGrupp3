@@ -21,6 +21,9 @@ public class Game {
         // instance variable
         Coordinate inputCoordinate;
         while (true){
+            //Creates a dynamic gameboard from user input.
+            System.out.println("Enter desiered width and height");
+            gameBoard = new GameBoard(scanner.nextInt(), scanner.nextInt());
             gameBoard.printBoard();
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
