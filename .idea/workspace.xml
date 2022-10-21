@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="Created dynamic gameboard">
+    <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="fixed dynamic gameboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/GameBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+    </list>
+    <list id="0c42a7a8-295b-46c9-9ef0-20ffe00cab1b" name="Changes by a" comment="">
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <list id="0b38c6f0-b4e8-46cd-b435-48a72251181c" name="Changes by Christel" comment="" />
+    <list id="bf8ead60-5261-459e-98f8-5a159cfdd4d3" name="Changes by Jocke" comment="">
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +38,17 @@
         <option name="repository" value="MinrojGrupp3" />
       </RepoCoordinatesHolder>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/GameBoard.java">
+      <ranges>
+        <range start1="10" end1="12" start2="10" end2="14" changelist="0c42a7a8-295b-46c9-9ef0-20ffe00cab1b" />
+        <range start1="13" end1="14" start2="15" end2="16" changelist="8e6e98c6-c781-4e15-a580-d49d1db4d272" />
+        <range start1="15" end1="15" start2="17" end2="23" changelist="bf8ead60-5261-459e-98f8-5a159cfdd4d3" />
+        <range start1="83" end1="84" start2="91" end2="92" changelist="bf8ead60-5261-459e-98f8-5a159cfdd4d3" />
+        <range start1="188" end1="188" start2="196" end2="199" changelist="0c42a7a8-295b-46c9-9ef0-20ffe00cab1b" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -63,7 +80,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1666344156122</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="fixed dynamic gameboard">
+      <created>1666348237887</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1666348237887</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,7 +114,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created dynamic gameboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created dynamic gameboard" />
+    <MESSAGE value="fixed dynamic gameboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed dynamic gameboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

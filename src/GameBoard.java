@@ -11,7 +11,7 @@ public class GameBoard {
     int totalMines = 2;
     public GameBoard(int width, int height) {
         this.width = width;
-        this.height = height;
+        this.height = width;
         // Set the number of cells on Board (X x Y).
         cells = new Cell[width][height];
         // for loop for initializing the number of cells on the X and Y axis.
