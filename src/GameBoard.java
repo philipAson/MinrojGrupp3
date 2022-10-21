@@ -11,7 +11,7 @@ public class GameBoard {
     int totalMines = 2;
     public GameBoard(int width, int height) {
         this.width = width;
-        this.height = width;
+        this.height = height;
         // Set the number of cells on Board (X x Y).
         cells = new Cell[width][height];
         // for loop for initializing the number of cells on the X and Y axis.
@@ -140,7 +140,22 @@ public class GameBoard {
 
         while (currentMines < totalMines){
 
+            for (int y = 0; y <height; y++){
+                for (int x = 0; x < width; x++){
 
+                    double chance = random.nextDouble();
+
+                    if(cells[y][x] == null){
+                        cells[y][x] = new Cell(y,x,false, cells.clone());
+
+                    } else if (cells[y][x].isBomb()){
+                    } else if(chance > 0.95 && currentMines < totalMines){
+
+                        cells[y][x].setBomb(true);
+                        currentMines++;
+                    }
+                }
+            }
 
 
         }
