@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="Implemented into newer branch">
+    <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/GameBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
-    <list id="0b38c6f0-b4e8-46cd-b435-48a72251181c" name="Changes by Christel" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,19 +57,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Johan_gmaeboard" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
