@@ -1,46 +1,55 @@
 import java.util.Scanner;
 
+
 public class Game {
     // Scanner for writing coordinates
-    private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
+
     // Instance variable Class Board
     private GameBoard gameBoard;
 
+
+
     // Default constructor
     public Game(Scanner scanner) {
-        this.scanner = new Scanner(System.in);
-        // Sets the default board to be 10 x 10 cells
-        gameBoard = new GameBoard(10, 10);
+        // Sets the dynamic board
+        System.out.println("Enter desired width and height");
+        int gameboardx = scanner.nextInt();
+        int gameboardy = scanner.nextInt();
+        gameBoard = new GameBoard(gameboardx, gameboardy );
+        //setGameboard();
         gameBoard.MineGenerator();
         gameBoard.setCellAdjacent();
+        //getGameboard();
+    }
 
+    public GameBoard getGameboard() {
+        return this.gameBoard;
     }
 
     // **********************
     void startGame() {
         // instance variable
         Coordinate inputCoordinate;
-        while (true){
-            //Creates a dynamic gameboard from user input.
-            System.out.println("Enter desiered width and height");
-            gameBoard = new GameBoard(scanner.nextInt(), scanner.nextInt());
+        while (true) {
             gameBoard.printBoard();
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
-            if (gameBoard.isBombHit(inputCoordinate)){
+            if (gameBoard.isBombHit(inputCoordinate)) {
                 gameBoard.printBoard();
 
                 System.out.println("\nYou Lose!");
                 break;
             }
-            if (gameBoard.hasWon()){
+            if (gameBoard.hasWon()) {
                 gameBoard.printBoard();
-                System.out.println("\nYou Win!" );
+                System.out.println("\nYou Win!");
                 break;
             }
         }
     }
-    public boolean isPositionValid (Coordinate coordinate) {
+
+    public boolean isPositionValid(Coordinate coordinate) {
         if (!gameBoard.validPosition(coordinate)) {
             System.out.println("Not a valid position");
             return false;
@@ -51,8 +60,17 @@ public class Game {
             return true;
         }
     }
+    public int setGameboard() {
+        System.out.println("Enter desired width and height");
+        int gameboardx = scanner.nextInt();
+        int gameboardy = scanner.nextInt();
+        return gameboardx;
+
+    }
+
+
     public Coordinate getCoordinateInput() {
-        Coordinate input = new Coordinate(0,0);
+        Coordinate input = new Coordinate(0, 0);
         // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
         // User sets coordinate to sweep
         // Also catches exception
@@ -61,17 +79,19 @@ public class Game {
                 do {
                     System.out.println("\n\nEnter coordinate for X");
                     String x = scanner.nextLine();
-                    input.x = Integer.parseInt(x) -1;
+                    input.x = Integer.parseInt(x) - 1;
 
                     System.out.println("Enter coordinate for Y");
                     String y = scanner.nextLine();
                     input.y = Integer.parseInt(y) - 1;
                 } while (!isPositionValid(input));
-                return input ;
+                return input;
 
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Cant read coordinate");
             }
         }
     }
+
+
 }

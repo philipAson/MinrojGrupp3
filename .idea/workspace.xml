@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="Implemented into newer branch">
+    <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="Created dynamic gameboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" afterDir="false" />
@@ -20,10 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Johan_gmaeboard" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="philipAson" />
+        <option name="repository" value="MinrojGrupp3" />
+      </RepoCoordinatesHolder>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,6 +57,13 @@
       <option name="presentableId" value="Default" />
       <updated>1666172308772</updated>
     </task>
+    <task id="LOCAL−00001" summary="Created dynamic gameboard">
+      <created>1666344156122</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1666344156122</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -73,6 +88,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created dynamic gameboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created dynamic gameboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
