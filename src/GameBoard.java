@@ -23,17 +23,21 @@ public class GameBoard {
     }
     // Prints the board
     public void printBoard() {
-        for (int y = 0; y < height; y++) {
-            System.out.print(" " + y + " ");
-        }
-        System.out.println("");
+
         for (int y = 0; y < height; y++) {
             System.out.println();
             for (int x = 0; x < width; x++) {
                 System.out.print(cells[x][y].toString());
             }
-            System.out.print("   " + y);
+            System.out.print("  " + (1 + y));
         }
+
+        System.out.println();
+        System.out.println("                                Y ^");
+        for (int y = 0; y < height; y++) {
+            System.out.print(" " + (y + 1) + " ");
+        }
+        System.out.println(" X >");
     }
     public void revealCell(Coordinate coordinate) {
         // Method .reveal is specified in Class:Cell.
