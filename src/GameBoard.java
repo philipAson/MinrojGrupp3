@@ -140,22 +140,7 @@ public class GameBoard {
 
         while (currentMines < totalMines){
 
-            for (int y = 0; y <height; y++){
-                for (int x = 0; x < width; x++){
 
-                    double chance = random.nextDouble();
-
-                    if(cells[y][x] == null){
-                        cells[y][x] = new Cell(y,x,false, cells.clone());
-
-                    } else if (cells[y][x].isBomb()){
-                    } else if(chance > 0.95 && currentMines < totalMines){
-
-                        cells[y][x].setBomb(true);
-                        currentMines++;
-                    }
-                }
-            }
 
 
         }
