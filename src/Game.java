@@ -5,23 +5,43 @@ public class Game {
     private Scanner scanner;
     // Instance variable Class Board
     private GameBoard gameBoard;
-
     // Default constructor
     public Game(Scanner scanner) {
-        this.scanner = new Scanner(System.in);
-        System.out.println("Please type in the size of your board.");
-        int xy = scanner.nextInt();
-        System.out.println("please type in % of bombs");
-        double bombPercentage = scanner.nextDouble() /100;
-        double totalMines = (xy * xy) * bombPercentage;
 
-        // Sets the default board to be 10 x 10 cells
+        System.out.println("Please type in the size of your board.");
+        int xy = sizeInput(scanner);
+        System.out.println("please type in % of bombs");
+        double bombPercentage = percentageInput(scanner);
+        double totalMines = (xy * xy) * bombPercentage;
         gameBoard = new GameBoard(xy, xy, totalMines);
         gameBoard.MineGenerator();
         gameBoard.setCellAdjacent();
 
-    }
 
+    }
+    public double percentageInput(Scanner scanner){
+        while (true) {
+            try {
+                String percentage = scanner.nextLine();
+                double bombPercentage = Double.parseDouble(percentage) /100;
+                return bombPercentage;
+            } catch (Exception e) {
+                System.out.println("Not a valid percentage");
+            }
+        }
+    }
+    public int sizeInput(Scanner scanner) {
+        while (true) {
+            try {
+                String size = scanner.nextLine();
+                int xy = Integer.parseInt(size);
+                return xy;
+            } catch (Exception e) {
+                System.out.println("Not a valid size");
+            }
+
+        }
+    }
     // **********************
     void startGame() {
         // instance variable
@@ -59,15 +79,16 @@ public class Game {
         // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
         // User sets coordinate to sweep
         // Also catches exception
+        Scanner scanner2 = new Scanner(System.in);
         while (true) {
             try {
                 do {
                     System.out.println("\n\nEnter coordinate for X");
-                    String x = scanner.nextLine();
+                    String x = scanner2.nextLine();
                     input.x = Integer.parseInt(x) -1;
 
                     System.out.println("Enter coordinate for Y");
-                    String y = scanner.nextLine();
+                    String y = scanner2.nextLine();
                     input.y = Integer.parseInt(y) - 1;
                 } while (!isPositionValid(input));
                 return input ;
