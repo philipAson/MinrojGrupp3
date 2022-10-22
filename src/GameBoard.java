@@ -8,10 +8,11 @@ public class GameBoard {
     private int width;
     private int height;
     // Constructor
-    int totalMines = 2;
-    public GameBoard(int width, int height) {
+    private double totalMines;
+    public GameBoard(int width, int height, double totalMines) {
         this.width = width;
         this.height = height;
+        this.totalMines = totalMines;
         // Set the number of cells on Board (X x Y).
         cells = new Cell[width][height];
         // for loop for initializing the number of cells on the X and Y axis.
@@ -33,11 +34,18 @@ public class GameBoard {
         }
 
         System.out.println();
-        System.out.println("                                Y ^");
-        for (int y = 0; y < height; y++) {
-            System.out.print(" " + (y + 1) + " ");
+        for (int x = 0; x < width; x++) {
+            System.out.print("   ");
         }
-        System.out.println(" X >");
+        System.out.println("  Y ^");
+        for (int x = 0; x < width; x++) {
+            if (x >= 10) {
+                System.out.print((x + 1) + " ");
+            } else {
+                System.out.print(" " + (x + 1) + " ");
+            }
+        }
+        System.out.print(" X >");
     }
     public void revealCell(Coordinate coordinate) {
         // Method .reveal is specified in Class:Cell.

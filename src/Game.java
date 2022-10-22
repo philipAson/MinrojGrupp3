@@ -9,8 +9,14 @@ public class Game {
     // Default constructor
     public Game(Scanner scanner) {
         this.scanner = new Scanner(System.in);
+        System.out.println("Please type in the size of your board.");
+        int xy = scanner.nextInt();
+        System.out.println("please type in % of bombs");
+        double bombPercentage = scanner.nextDouble() /100;
+        double totalMines = (xy * xy) * bombPercentage;
+
         // Sets the default board to be 10 x 10 cells
-        gameBoard = new GameBoard(10, 10);
+        gameBoard = new GameBoard(xy, xy, totalMines);
         gameBoard.MineGenerator();
         gameBoard.setCellAdjacent();
 
