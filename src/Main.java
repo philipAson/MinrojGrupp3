@@ -5,7 +5,7 @@ public class Main {
 
         System.out.println("*============================*");
         System.out.println("*============================*");
-        System.out.println("*==Whalecum in my Sweeper!==*");
+        System.out.println("*==Welcome to minesweeper!===*");
         System.out.println("*============================*");
         System.out.println("*============================*");
 
@@ -15,13 +15,5 @@ public class Main {
 
         Game game = new Game(new Scanner(System.in));
         game.startGame();
-
-
-
-
-
-
-
-
     }
 }

@@ -16,8 +16,6 @@ public class Game {
         gameBoard = new GameBoard(xy, xy, totalMines);
         gameBoard.MineGenerator();
         gameBoard.setCellAdjacent();
-
-
     }
     public double percentageInput(Scanner scanner){
         while (true) {
