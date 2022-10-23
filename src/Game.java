@@ -37,7 +37,6 @@ public class Game {
             } catch (Exception e) {
                 System.out.println("Not a valid size");
             }
-
         }
     }
     // **********************

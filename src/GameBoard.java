@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class GameBoard {
-
     // 2D Cell Array. Representing the "game board".
     private Cell cells [][];
     // Two int variables that represent width and height of the game board.
@@ -32,7 +31,6 @@ public class GameBoard {
             }
             System.out.print("  " + (1 + y));
         }
-
         System.out.println();
         for (int x = 0; x < width; x++) {
             System.out.print("   ");
@@ -52,7 +50,6 @@ public class GameBoard {
         // cells[coordinate.x][coordinate.y].sweep();
         floodFill(coordinate.x, coordinate.y);
     }
-
     public void floodFill(int x, int y) {
         if (x >= 0 && x < cells.length && y >= 0 && y < cells.length) {
             cells[x][y].sweep();
@@ -83,7 +80,6 @@ public class GameBoard {
             }
         }
     }
-
     public void setCellAdjacent(){
         int countBombs = 0;
         for (int x = 0; x < cells.length; x++){
@@ -129,7 +125,6 @@ public class GameBoard {
             }
         }
     }
-
     public boolean hasWon(){
         for (Cell[] i : cells){ //för alla kolumner i 2D arrayen
             for (Cell j : i){ //för alla celler i kolumnen
@@ -140,7 +135,6 @@ public class GameBoard {
         }
         return true; //annars har man vunnit (om alla celler förutom bomber är "vända på")
     }
-
     public void MineGenerator() {
 
         int currentMines = 0;
@@ -164,12 +158,8 @@ public class GameBoard {
                     }
                 }
             }
-
-
         }
-
     }
-
     public boolean isBombHit (Coordinate cood){
         if (cells[cood.getX()][cood.getY()].isBomb()){
             return true;
@@ -177,7 +167,6 @@ public class GameBoard {
             return false;
         }
     }
-
     public boolean validPosition(Coordinate coordinate) {
         /*A valid position is one that matches with coordinates inside the bounds of the cells array.
         We already have a width and height variable, and arrays start at 0 so these can be used to check the validity.
