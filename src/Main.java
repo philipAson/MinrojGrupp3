@@ -11,9 +11,17 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Player 1 enter name: ");
-        String player = scanner.nextLine();
+        Player player = new Player(scanner.nextLine());
 
-        Game game = new Game(new Scanner(System.in));
-        game.startGame();
+        while (true) {
+            Game game = new Game(new Scanner(System.in), player);
+            game.startGame();
+            System.out.println(player.getName() + " has won " + player.getNumberOfWins() +
+                    " times. Would you like to play again? (y/n)");
+            String choice = scanner.nextLine();
+            if (choice.equals("n") || choice.equals("N")){
+                break;
+            }
+        }
     }
 }
