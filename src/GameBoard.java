@@ -85,39 +85,18 @@ public class GameBoard {
         for (int x = 0; x < cells.length; x++){
             for (int y = 0; y < cells.length; y++){ // för alla celler i gameboarden
                 if (!cells[x][y].isBomb()) { //om den nuvarande cellen inte är en bomb
-                    // kolla alla bomber runt om (detta går nog att göra snyggare)
-                    try{ // try ifall det är utanför arrayen
-                        if (cells[x - 1][y - 1].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
-                    try{
-                        if (cells[x][y - 1].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
-                    try{
-                        if (cells[x + 1][y - 1].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
-                    try{
-                        if (cells[x][y + 1].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
-                    try{
-                        if (cells[x + 1][y].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
-                    try{
-                        if (cells[x + 1][y + 1].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
-                    try{
-                        if (cells[x-1][y+1].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
-                    try{
-                        if (cells[x-1][y].isBomb()){
-                            countBombs = countBombs + 1;
-                        }} catch(Exception e){}
+                    // kolla alla bomber runt om 
+                    for (int i = -1; i < 2; i++){
+                        for (int j = -1; j < 2; j++){
+                            if (i != 0 || j != 0){
+                                try{
+                                    if (cells[x + i][y + j].isBomb()){
+                                        countBombs = countBombs + 1;
+                                    }
+                                } catch(Exception e){}
+                            }
+                        }
+                    }
                     // sätt adjacent till antalet bomber runt om
                     cells[x][y].setAdjacent(countBombs);
                     countBombs = 0; //sätt tillbaka till 0
