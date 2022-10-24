@@ -5,8 +5,10 @@ public class Game {
     private Scanner scanner;
     // Instance variable Class Board
     private GameBoard gameBoard;
+    private Player player;
     // Default constructor
-    public Game(Scanner scanner) {
+    public Game(Scanner scanner, Player player) {
+        this.player = player;
 
         System.out.println("Please type in the size of your board.");
         int xy = sizeInput(scanner);
@@ -56,6 +58,7 @@ public class Game {
             if (gameBoard.hasWon()){
                 gameBoard.printBoard();
                 System.out.println("\nYou Win!" );
+                player.addWin();
                 break;
             }
         }
