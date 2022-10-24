@@ -21,15 +21,31 @@ public class Game {
     }
     public double percentageInput(Scanner scanner){
         while (true) {
+            double bombPercentage;
             try {
                 String percentage = scanner.nextLine();
-                double bombPercentage = Double.parseDouble(percentage) /100;
+                bombPercentage = Double.parseDouble(percentage) /100;
+
+                // Om man försöker att lägga in mer än 100 procent på bomber så får man not valid.
+                // Och en chans att skriva in igen.
+                if  (bombPercentage >= 1.0) {
+                    throw new Exception();
+
+                }
                 return bombPercentage;
+
+
             } catch (Exception e) {
                 System.out.println("Not a valid percentage");
             }
         }
     }
+
+
+
+
+
+
     public int sizeInput(Scanner scanner) {
         while (true) {
             try {
