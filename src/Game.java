@@ -51,12 +51,12 @@ public class Game {
             try {
                 String size = scanner.nextLine();
                 int xy = Integer.parseInt(size);
-                if (xy < 2 || xy > 100){
+                if (xy < 2 || xy > 50){
                     throw new Exception();
                 }
                 return xy;
             } catch (Exception e) {
-                System.out.println("Not a valid size, please enter a number between 2 and 100");
+                System.out.println("Not a valid size, please enter a number between 2 and 50");
             }
         }
     }
@@ -69,12 +69,14 @@ public class Game {
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
             if (gameBoard.isBombHit(inputCoordinate)){
+                gameBoard.revealAll();
                 gameBoard.printBoard();
 
                 System.out.println("\nYou Lose!");
                 break;
             }
             if (gameBoard.hasWon()){
+                gameBoard.revealAll();
                 gameBoard.printBoard();
                 System.out.println("\nYou Win!" );
                 player.addWin();
