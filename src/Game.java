@@ -51,9 +51,12 @@ public class Game {
             try {
                 String size = scanner.nextLine();
                 int xy = Integer.parseInt(size);
+                if (xy < 2 || xy > 100){
+                    throw new Exception();
+                }
                 return xy;
             } catch (Exception e) {
-                System.out.println("Not a valid size");
+                System.out.println("Not a valid size, please enter a number between 2 and 100");
             }
         }
     }
