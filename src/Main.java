@@ -13,6 +13,9 @@ public class Main {
         System.out.println("Player 1 enter name: ");
         String player = scanner.nextLine();
 
+        game.createPlayer(player);
+        game.startGame();
+
         Game game = new Game(new Scanner(System.in));
         game.startGame();
     }

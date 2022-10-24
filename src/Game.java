@@ -5,6 +5,7 @@ public class Game {
     private Scanner scanner;
     // Instance variable Class Board
     private GameBoard gameBoard;
+    private Player p1;
     // Default constructor
     public Game(Scanner scanner) {
 
@@ -95,4 +96,10 @@ public class Game {
             }
         }
     }
+public void createPlayer(String name){
+
+ p1= new Player(name);
+
+}
+
 }
