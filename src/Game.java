@@ -8,12 +8,38 @@ public class Game {
     private Player p1;
     // Default constructor
     public Game(Scanner scanner) {
-        this.scanner = new Scanner(System.in);
-        // Sets the default board to be 10 x 10 cells
-        gameBoard = new GameBoard(10, 10);
+
+        System.out.println("Please type in the size of your board.");
+        int xy = sizeInput(scanner);
+        System.out.println("please type in % of bombs");
+        double bombPercentage = percentageInput(scanner);
+        double totalMines = (xy * xy) * bombPercentage;
+        gameBoard = new GameBoard(xy, xy, totalMines);
+        gameBoard.MineGenerator();
         gameBoard.setCellAdjacent();
     }
-
+    public double percentageInput(Scanner scanner){
+        while (true) {
+            try {
+                String percentage = scanner.nextLine();
+                double bombPercentage = Double.parseDouble(percentage) /100;
+                return bombPercentage;
+            } catch (Exception e) {
+                System.out.println("Not a valid percentage");
+            }
+        }
+    }
+    public int sizeInput(Scanner scanner) {
+        while (true) {
+            try {
+                String size = scanner.nextLine();
+                int xy = Integer.parseInt(size);
+                return xy;
+            } catch (Exception e) {
+                System.out.println("Not a valid size");
+            }
+        }
+    }
     // **********************
     void startGame() {
         // instance variable
@@ -22,6 +48,17 @@ public class Game {
             gameBoard.printBoard();
             inputCoordinate = getCoordinateInput();
             gameBoard.revealCell(inputCoordinate);
+            if (gameBoard.isBombHit(inputCoordinate)){
+                gameBoard.printBoard();
+
+                System.out.println("\nYou Lose!");
+                break;
+            }
+            if (gameBoard.hasWon()){
+                gameBoard.printBoard();
+                System.out.println("\nYou Win!" );
+                break;
+            }
         }
     }
     public boolean isPositionValid (Coordinate coordinate) {
@@ -37,34 +74,27 @@ public class Game {
     }
     public Coordinate getCoordinateInput() {
         Coordinate input = new Coordinate(0,0);
-        try {
-            do {
-           // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
-            // User sets coordinate to sweep
-                // Also catches exception
-            System.out.println("\n Enter coordinate for Y");
-            input.y = scanner.nextInt();
+        // System.out.println("\nEnter the coordinate you want to sweep by typing in Y(Space)X");
+        // User sets coordinate to sweep
+        // Also catches exception
+        Scanner scanner2 = new Scanner(System.in);
+        while (true) {
+            try {
+                do {
+                    System.out.println("\n\nEnter coordinate for X");
+                    String x = scanner2.nextLine();
+                    input.x = Integer.parseInt(x) -1;
 
-            System.out.println("\n Enter coordinate for X");
-            input.x = scanner.nextInt();
+                    System.out.println("Enter coordinate for Y");
+                    String y = scanner2.nextLine();
+                    input.y = Integer.parseInt(y) - 1;
+                } while (!isPositionValid(input));
+                return input ;
 
-
-
-         } while (!isPositionValid(input)); /// LÄGG TILLL VALIDPOSITION METOD INOM PARANTESERNA!!!!!!!!
-            {
-
+            } catch (Exception e){
+                System.out.println("Cant read coordinate");
             }
-
-
-            return input;
-
-
-        } catch (Exception e) {
-            System.out.println("Wrong input. will clear 0 0!");
-            scanner.next();
-
         }
-        return input;
     }
 public void createPlayer(String name){
 
