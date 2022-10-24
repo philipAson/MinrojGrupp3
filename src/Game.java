@@ -1,3 +1,5 @@
+import jdk.jfr.Percentage;
+
 import java.util.Scanner;
 
 public class Game {
@@ -18,16 +20,40 @@ public class Game {
         gameBoard.setCellAdjacent();
     }
     public double percentageInput(Scanner scanner){
+        double bombPercentage ;
         while (true) {
+
+
             try {
                 String percentage = scanner.nextLine();
-                double bombPercentage = Double.parseDouble(percentage) /100;
-                return bombPercentage;
+                bombPercentage = Double.parseDouble(percentage) / 100;
+
+
+                if  (bombPercentage >= 1.0) {
+                    throw new Exception();
+
+                }
+
+
+                //System.out.println("Not a valid percentageHEj");
+
+               return bombPercentage;
+
+
+
+
             } catch (Exception e) {
-                System.out.println("Not a valid percentage");
+
+                    System.out.println("Not a valid percentage");
+
+                }
+
+
             }
-        }
+
     }
+
+
     public int sizeInput(Scanner scanner) {
         while (true) {
             try {
