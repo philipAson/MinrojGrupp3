@@ -28,14 +28,14 @@ public class Game {
                 String percentage = scanner.nextLine();
                 bombPercentage = Double.parseDouble(percentage) / 100;
 
-
+                // Om man försöker att lägga in mer än 100 procent på bomber så får man not valid.
+                // Och en chans att skriva in igen .
                 if  (bombPercentage >= 1.0) {
                     throw new Exception();
 
                 }
 
 
-                //System.out.println("Not a valid percentageHEj");
 
                return bombPercentage;
 
