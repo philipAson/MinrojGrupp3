@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e6e98c6-c781-4e15-a580-d49d1db4d272" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Coordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Coordinate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/GameBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinrojGrupp3/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
