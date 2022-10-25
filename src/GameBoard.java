@@ -148,4 +148,13 @@ public class GameBoard {
     public boolean isCellRevealed(Coordinate coordinate) {
         return cells[coordinate.x][coordinate.y].isCleared();
     }
+
+    public void revealAll(){
+        // Avslöjar på alla celler
+        for (Cell[] i : cells){
+            for (Cell j : i){
+                j.sweep();
+            }
+        }
+    }
 }
